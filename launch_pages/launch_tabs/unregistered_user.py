@@ -14,7 +14,7 @@ def learn():
 ## ______________________________________________________________________________________________________________________##
     col1,colb=lit.columns([1,6])
 
-    triangle=Image.open("Art/Pictures/Triangle.png")
+    triangle=Image.open("Art/Pictures/triangle.png")
     col1.image(triangle)
     
     colb.header("Why are you under attack, and how FANG can help you secure your network")
