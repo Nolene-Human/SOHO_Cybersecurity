@@ -14,24 +14,26 @@ def learn():
 ## ______________________________________________________________________________________________________________________##
     col1,colb=lit.columns([1,6])
 
-    triangle=Image.open("Art/Pictures/triangle.png")
-    col1.image(triangle)
+    lit.header("Monitor your Network")
+    lit.write("In this section you will aquire the basic knowledge to understand the threat on a HomeOffice network")
     
-    colb.header("Why are you under attack, and how FANG can help you secure your network")
+    lit.markdown("---")
 
 # ---------- Key Terminology ---------------#
        
     
-    lit.text("KEY WORDS TO TAKE NOTE : ")
+    lit.text("CYBERSECURITY TERMINOLOGY : ")
     col2,col3= lit.columns(2) 
     
     
     col2.write("""
             - Cyber Threats
             - Cyber Attacks
+            - Attack Surface
             - Gateway
             - IP Address
             - Mac Addresses
+               
             """)
 
     col3.write(""" 
@@ -46,43 +48,36 @@ def learn():
     lit.markdown("---")
 
 # ---------- Key Ideas ---------------#  
-    
-    lit.write("In this section you will aquire the basic knowledge to confidently manage your own home network or communicate with technical support on this matter.")
-    lit.markdown("#### Why would ANYONE want to attack you?")
+   
 
-    lit.write("""In the book The Art of Attack by Maxi Reynolds, a very successful social engineering in CyberSecurity states it well""")
+    lit.subheader("Why would ANYONE want to attack you?")
+
     lit.write("""In the book [The Art of Attack](https://www.amazon.com/Art-Attack-Attacker-Security-Professionals/dp/1119805465) by Maxi Reynolds, a very successful social engineering in CyberSecurity states it well""")
                     
-    lit.write("Your information or the information you have access to is crucial for cybercriminals.")
+    lit.markdown("#### Your information, or the information you have access too, is crucial for cybercriminals.")
 
-    lit.text("\n")
-    
     lit.markdown("---")
 
-    lit.markdown("#### What is a Network and Why Should I care?")
+
+
+    lit.subheader("What is a Network and Why Should I care?")
     lit.markdown("""
     You are connecting to the internet via a DEVICE through a PORT.
      The DEVICE connecting you to the internet is called a WIFI ROUTER. 
     The Port is like a DOOR to and from the Internet World. 
     Your Wifi Router is also commonly refered to as your GATEWAY.""",)
-    lit.markdown("#### Each device will have a DOOR -> connected to your GATEWAY -> leading to the World Wide Web and all the hackers that live there.")
-
+    lit.write("Each device will have a DOOR -> connected to your GATEWAY -> leading to the World Wide Web and all the hackers that live there.")
+    lit.markdown("#### Securing your network and the access to your resources is one of the best ways to secure you and your home business")
     lit.markdown("---")
 
+    lit.subheader("How is this done?")
     lit.markdown("""
     Your Gateway will assign each device on your network an address to identify and communicate with, this is called an IP ADDRESS. 
     Each device will have a unique IP ADDRESS and a MAC ADDRESS""")
     
-    lit.markdown("#### The router assign a devices and IP address and a Manufacturer assigns the Mac Address")
-    
-    lit.markdown("---")
-
+    lit.markdown("The router assign a devices and IP address and a Manufacturer assigns the Mac Address")
     lit.markdown("""
-    Through these unique numbers we can identify the devices on your network (inlcuding its known vulnerabilites and uses).""") 
-
-    lit.markdown("#### This collective group of devices are called your NETWORK.")
-
-    lit.markdown("---")
+    Through these unique numbers hackers can identify the devices on your network (inlcuding its known vulnerabilites and uses).""") 
 
     lit.markdown("""
     Hackers can without your consent, connect, communicate or monitor your NETWORK.  
@@ -91,21 +86,18 @@ def learn():
     lit.markdown("#### These malicious activities are called CYBER THREATS.")
 
     lit.markdown("---")
-
     lit.markdown("""
-    #### This is why you need to monitoring your Network.
+    With Fang your Home Business network will follow and monitor the most common SOHO cyber threats, securing your business and 
+                 partners agains cyberattacks. With our comprehensive protection, you business and home can browse, work, and communicate in 
+                 cohesion with the utmost confidence :medal: """)
 
-    This tool will help you take the basic necessary precautions to avoid the most common *CYBER ATTACKS* by scanning your internal network for vulnerabilities and providing tips and learning pages to help you protect 
-    your network.
-
-    Well Done for taking the first step in securing yourself agains Cyber Threats ! """,True)
 
 def test():
 ## ______________________________________________________________________________________________________________________##
 # - Link each threat to a solution which will either be the TIPS or the SCANNER page 
 ## ______________________________________________________________________________________________________________________##
 
-   lit.subheader("Identify your risks:")
+   lit.header("Identify your risks:")
 
     # -- tick box for users input -- #
    social_Engineering = lit.checkbox('Do you use Emails?')
@@ -165,7 +157,7 @@ def tips():
 # - Link each threat to a solution which will either be the TIPS or the SCANNER page 
 ## ______________________________________________________________________________________________________________________##
 
-    lit.markdown("# Good CyberHygiene Tecniques + Tips")
+    lit.header("Good CyberHygiene Tecniques + Tips")
     select = lit.selectbox("Select a topic from the dropdown list",(" ","Maintain good password hygiene","Update systems and software","Multi Factor Authentication","Keep up-to-date on phishing/security training and awareness","Implement 'Zero Trust'","Anti-Virus"))
 
     if select == "Maintain good password hygiene":
@@ -247,24 +239,37 @@ def what():
 ## ______________________________________________________________________________________________________________________##
 
     lit.header("Cybersecurity Specialist")
-    lit.markdown("**for Home Offices, Web Developers and Application Developers**")
+    lit.markdown("**for Home Offices and Web Application Developers**")
 
     col1, col2 = lit.columns(2)
     col2.markdown('**Application Security**')
     col2.write("""Recognizing that every application is unique, we adopt a tailored approach to cybersecurity. 
-            Our solutions are never one-size-fits-all; instead, we meticulously analyze your application's 
-               architecture and functionalities to devise defenses that precisely fit its profile. 
-               From code audits to penetration testing, we leave no stone unturned in our pursuit of comprehensive security.    
+            Our solutions are never one-size-fits-all; instead, join you on your journey where you need us.
+               From start to finish, code audits to penetration testing, we leave no stone unturned in your pursuit of comprehensive security.    
       """)
+    
+    col2.markdown(""" * Before Development Begins\n
+* During Definition and Design \n
+* During Development \n
+* During Deployment \n
+* During Maintenance and Operations""")
   
     col1.markdown('**Home Office Security**')
-    col1.write(""" Beyond just services, we aim to cultivate lasting partnerships. 
+    col1.write(""" Recognizing that every SOHO network has its unique footprint, we adopt a bespoke approach to security. 
+               Our solutions are never off-the-shelf; rather, they are meticulously crafted to address your specific 
+               network architecture and devices.  
                Our commitment to your security goes beyond the immediate horizon. As you evolve, we evolve with you, 
                adapting our strategies to match your growth and changing threat landscapes. 
-                Embark on a journey where security meets innovation.
-               Explore our services, meet our specialists, and get ready to elevate your network security to unprecedented heights.""")
+                Embark on a journey where security meets innovation.Explore our services, meet our specialists
+               , and get ready to elevate your network security to unprecedented heights.""")
     
-    lit.markdown('**Scroll through our free resources**')
+    col1.markdown(""" * Pre-engagement Interactions\n
+* Intelligence Gathering \n
+* Threat Modeling \n
+* Vulnerability Analysis \n
+* Exploitation / Post Exploitation""")
+    lit.write ("\n\n\n ")
+    lit.markdown('**Scroll through our FREE basic training resources**')
 
 def who():
 ## ______________________________________________________________________________________________________________________##
@@ -287,7 +292,9 @@ def who():
         lit.write('Contact us for an assessement and quote')
         form_name=lit.text_input('Name')
         form_email=lit.text_input('Email address')
-        form_service=lit.selectbox('Which service are you enquiring',('Home Office','Web Application','Both'))
+        #form_service=lit.selectbox('Which service are you enquiring',('All','Home Office','Web Application'))
+        ho=lit.multiselect("Select Home Office Services ",('All','Threat Modeling','Vulnerability Analysis0','None'))
+        wa=lit.multiselect('Select Web Application Services',('All','Before Development Begins','During Definition and Design','During Development','During Deployment','During Maintenance and Operations','None'))
         contact_form=lit.form_submit_button('Submit')
 
     if contact_form:
@@ -298,7 +305,7 @@ def who():
                 
             subject=f"message from new client {html.escape(form_name)}"
             content =f"""
-                Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(form_service)}
+                Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(ho)} in {html.escape(wa)},
                 """
             em = MIMEMultipart()
             em['From']=FROM
@@ -314,4 +321,6 @@ def who():
                     smtp.sendmail(FROM,TO,em.as_string())
                 
             except Exception:
-                lit.write('PASSWORD')
+                lit.write('error')
+
+    lit.header("Prices")  
