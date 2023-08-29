@@ -321,6 +321,4 @@ def who():
                     smtp.sendmail(FROM,TO,em.as_string())
                 
             except Exception:
-                lit.write('error')
-
-    lit.header("Prices")  
+                lit.write('error') 
