@@ -13,27 +13,6 @@ from PIL import Image #used to display images on page
 ## Import applications Login and Registration Functions ##
 import launch_pages.launch
 
-<script>
-(function (m, a, z, e) {
-  var s, t;
-  try {
-    t = m.sessionStorage.getItem('maze-us');
-  } catch (err) {}
-
-  if (!t) {
-    t = new Date().getTime();
-    try {
-      m.sessionStorage.setItem('maze-us', t);
-    } catch (err) {}
-  }
-
-  s = a.createElement('script');
-  s.src = z + '?t=' + t + '&apiKey=' + e;
-  s.async = true;
-  a.getElementsByTagName('head')[0].appendChild(s);
-  m.mazeUniversalSnippetApiKey = e;
-})(window, document, 'https://snippet.maze.co/maze-universal-loader.js', 'eba3fe46-7bf0-4460-bdcc-5082754ad18e');
-</script>
 ## ______________________________________________________________________________________________________________________##
 
 ## Page UI / UX
