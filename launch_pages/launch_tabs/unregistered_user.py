@@ -305,7 +305,7 @@ def who():
                 
             subject=f"message from new client {html.escape(form_name)}"
             content =f"""
-                Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(ho)} in {html.escape(wa)},
+                Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(ho)} in {html.escape(wa)}
                 """
             em = MIMEMultipart()
             em['From']=FROM
