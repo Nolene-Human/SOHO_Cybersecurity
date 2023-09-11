@@ -293,7 +293,7 @@ def who():
         form_name=lit.text_input('Name')
         form_email=lit.text_input('Email address')
         #form_service=lit.selectbox('Which service are you enquiring',('All','Home Office','Web Application'))
-        ho=lit.multiselect("Select Home Office Services ",('All','Threat Modeling','Vulnerability Analysis0','None'))
+        ho=lit.multiselect("Select Home Office Services ",('All','Threat Modeling','Vulnerability Analysis'))
         wa=lit.multiselect('Select Web Application Services',('All','Before Development Begins','During Definition and Design','During Development','During Deployment','During Maintenance and Operations','None'))
         contact_form=lit.form_submit_button('Submit')
 
