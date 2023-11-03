@@ -288,8 +288,7 @@ def who():
         lit.write('Contact us for an assessement and quote')
         form_name=lit.text_input('Name')
         form_email=lit.text_input('Email address')
-        #form_service=lit.selectbox('Which service are you enquiring',('All','Home Office','Web Application'))
-        ho=lit.multiselect("Select Home Office Services ",('All','Threat Modeling','Vulnerability Analysis0','None'))
+         ho=lit.multiselect("Select Home Office Services ",('All','Threat Modeling','Vulnerability Analysis','None'))
         wa=lit.multiselect('Select Web Application Services',('All','Before Development Begins','During Definition and Design','During Development','During Deployment','During Maintenance and Operations','None'))
         contact_form=lit.form_submit_button('Submit')
 
@@ -300,7 +299,7 @@ def who():
             TO = os.environ.get('fangedu_email')
                 
             subject=f"message from new client {html.escape(form_name)}"
-            content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(ho)} in {html.escape(wa)}"
+            content =f"Please contact {html.escape(str(form_name))} on {html.escape(str(form_email))} for {html.escape(str(ho))} in {html.escape(str(wa))}"
             em = MIMEMultipart()
             em['From']=FROM
             em['To']=TO
