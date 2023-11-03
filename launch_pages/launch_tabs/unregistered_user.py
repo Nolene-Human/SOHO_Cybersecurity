@@ -3,16 +3,12 @@
 
 import streamlit as lit
 
-from PIL import Image #used to display images on page 
-from streamlit_lottie import st_lottie #used for animations
-
-import Art.Animation.lottie_animations # importing images saved on the application
 
 def learn():
 ## ______________________________________________________________________________________________________________________##
 # - NO FUTURE DEVELOPMENT PLANNED - #
 ## ______________________________________________________________________________________________________________________##
-    col1,colb=lit.columns([1,6])
+   
 
     lit.header("Monitor your Network")
     lit.write("In this section you will aquire the basic knowledge to understand the threat on a HomeOffice network")
@@ -292,8 +288,9 @@ def who():
         lit.write('Contact us for an assessement and quote')
         form_name=lit.text_input('Name')
         form_email=lit.text_input('Email address')
-        form_service=lit.selectbox('Which service are you enquiring',('All','Home Office','Web Application'))
-        
+        #form_service=lit.selectbox('Which service are you enquiring',('All','Home Office','Web Application'))
+        ho=lit.multiselect("Select Home Office Services ",('All','Threat Modeling','Vulnerability Analysis0','None'))
+        wa=lit.multiselect('Select Web Application Services',('All','Before Development Begins','During Definition and Design','During Development','During Deployment','During Maintenance and Operations','None'))
         contact_form=lit.form_submit_button('Submit')
 
     if contact_form:
@@ -303,7 +300,7 @@ def who():
             TO = 'onlyforshowhack@gmail.com'
                 
             subject=f"message from new client {html.escape(form_name)}"
-            content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(form_service)}"
+            content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(ho)} in {html.escape(wa)}"
             em = MIMEMultipart()
             em['From']=FROM
             em['To']=TO
@@ -318,4 +315,6 @@ def who():
                     smtp.sendmail(FROM,TO,em.as_string())
                 
             except Exception:
-                lit.write('error') 
+                lit.write('error')
+
+    lit.header("Prices")  

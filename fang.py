@@ -6,12 +6,12 @@
 
 ## Importing Front-end tool Streamlit (https://streamlit.io/)
 import streamlit as lit
-from PIL import Image #used to display images on page
 
 ## ______________________________________________________________________________________________________________________##
 
 ## Import applications Login and Registration Functions ##
 import launch_pages.launch
+
 
 ## ______________________________________________________________________________________________________________________##
 
