@@ -295,9 +295,9 @@ def who():
 
     if contact_form:
             
-            FROM = 'nhuman101@gmail.com'
-            PASSWORD=os.environ.get('gmail')
-            TO = 'onlyforshowhack@gmail.com'
+            FROM =os.environ.get('fangedu_email')
+            PASSWORD=os.environ.get('fangedu_key')
+            TO = os.environ.get('fangedu_email')
                 
             subject=f"message from new client {html.escape(form_name)}"
             content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(ho)} in {html.escape(wa)}"
@@ -316,5 +316,3 @@ def who():
                 
             except Exception:
                 lit.write('error')
-
-    lit.header("Prices")  
