@@ -313,5 +313,5 @@ def who():
                     smtp.login(FROM, PASSWORD)
                     smtp.sendmail(FROM,TO,em.as_string())
                 
-            except Exception:
-                lit.write('error')
+            except Exception as e:
+                lit.write(e)
