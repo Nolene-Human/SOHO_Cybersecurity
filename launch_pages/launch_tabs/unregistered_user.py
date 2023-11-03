@@ -292,14 +292,12 @@ def who():
         #wa=lit.multiselect('Select Web Application Services',('All','Before Development Begins','During Definition and Design','During Development','During Deployment','During Maintenance and Operations','None'))
         contact_form=lit.form_submit_button('Submit')
 
-    if contact_form:
-            
-            FROM =os.environ.get('fangedu_email')
-            PASSWORD=os.environ.get('fangedu_key')
-            TO = os.environ.get('fangedu_email')
+            FROM ='onlyforshowhacks@gmail.com'
+            email_password=os.environ.get('admin_gmail')
+            TO = 'onlyforshowhacks@gmail.com'
                 
             subject=f"message from new client {html.escape(form_name)}"
-            content =f"Please contact {html.escape(str(form_name))} on {html.escape(str(form_email))}"
+            content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)}"
             em = MIMEMultipart()
             em['From']=FROM
             em['To']=TO
@@ -310,8 +308,5 @@ def who():
             context = ssl.create_default_context()
             try:
                 with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
-                    smtp.login(FROM, PASSWORD)
-                    smtp.sendmail(FROM,TO,em.as_string())
-                
-            except Exception as e:
-                lit.write(e)
+                    smtp.login('onlyforshowhack@gmail.com',email_password)
+                    smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
