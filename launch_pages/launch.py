@@ -14,7 +14,7 @@ import launch_pages.launch_tabs.unregistered_user
 ## This is the launch page Layout - each tab calls a different function displaying the various features
 def launch():
     
-        tab1, tab2, tab3, tab4, tab5 = lit.tabs(["What is FANG","|  CyberSecurity Tips","|  Learn about Cybersecurity ","|  Take the Vulnerability Test", "| Contact Us"])
+        tab1, tab2, tab3, tab4, tab5 = lit.tabs(["What is FANG","|  CyberSecurity Tips","|  Learn Home Cybersecurity ","|  Take the Vulnerability Test", "| Contact Us"])
 
 
 
