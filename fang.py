@@ -17,10 +17,7 @@ import launch_pages.launch
 
 ## Page UI / UX
 lit.set_page_config(page_title="FANG",
-        page_icon="🚀",
-        layout="wide")
-
-#logo=Image.open("Art/Pictures/just4show.png")
+        page_icon="🚀")
 
 ## ______________________________________________________________________________________________________________________##
 
