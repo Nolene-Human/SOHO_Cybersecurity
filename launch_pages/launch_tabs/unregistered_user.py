@@ -273,11 +273,8 @@ def who():
 ## ______________________________________________________________________________________________________________________##
     import smtplib
     import os
-    from os.path import basename
-    from email.message import EmailMessage
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
-    from email.mime.application import MIMEApplication
     import ssl
     import html
 
@@ -288,33 +285,31 @@ def who():
         lit.write('Contact us for an assessement and quote')
         form_name=lit.text_input('Name')
         form_email=lit.text_input('Email address')
-        #form_service=lit.selectbox('Which service are you enquiring',('All','Home Office','Web Application'))
-        ho=lit.multiselect("Select Home Office Services ",('All','Threat Modeling','Vulnerability Analysis0','None'))
-        wa=lit.multiselect('Select Web Application Services',('All','Before Development Begins','During Definition and Design','During Development','During Deployment','During Maintenance and Operations','None'))
         contact_form=lit.form_submit_button('Submit')
 
     if contact_form:
             
-            FROM = 'nhuman101@gmail.com'
-            PASSWORD=os.environ.get('gmail')
-            TO = 'onlyforshowhack@gmail.com'
+        FROM ='onlyforshowhacks@gmail.com'
+        email_password=os.environ.get('admin_gmail')
+        TO = 'onlyforshowhacks@gmail.com'
                 
-            subject=f"message from new client {html.escape(form_name)}"
-            content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)} for {html.escape(ho)} in {html.escape(wa)}"
-            em = MIMEMultipart()
-            em['From']=FROM
-            em['To']=TO
-            em['Subject']=subject
-            body=MIMEText(content,'plain')
-            em.attach(body)
+        subject=f"message from new client {html.escape(form_name)}"
+        content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)}"
+        em = MIMEMultipart()
+        em['From']=FROM
+        em['To']=TO
+        em['Subject']=subject
+        body=MIMEText(content,'plain')
+        em.attach(body)
 
-            context = ssl.create_default_context()
-            try:
-                with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
-                    smtp.login(FROM, PASSWORD)
-                    smtp.sendmail(FROM,TO,em.as_string())
+        context = ssl.create_default_context()
+        try:
+            with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
+                smtp.login('onlyforshowhack@gmail.com',email_password)
+                smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
+
                 
-            except Exception:
-                lit.write('error')
+        except Exception as e:
+            lit.write(e)
 
-    lit.header("Prices")  
+   
