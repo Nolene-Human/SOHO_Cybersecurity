@@ -2,6 +2,13 @@
  ## -------------------------- Called from Launch.py when user select any of the tabs ------------------------------------##
 
 import streamlit as lit
+import smtplib
+import os
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import ssl
+import html
+
 
 
 def learn():
@@ -266,24 +273,12 @@ def what():
     lit.markdown('**Scroll through our FREE basic training resources**')
 
 def who():
-## ______________________________________________________________________________________________________________________##
-# - NO FUTURE DEVELOPMENT PLANNED - #
-## ______________________________________________________________________________________________________________________##
-    import smtplib
-    import os
-    from email.mime.text import MIMEText
-    from email.mime.multipart import MIMEMultipart
-    import ssl
-    import html
-
-
    lit.header("Cybersecurity Specialist")
-
    with lit.form('contact', clear_on_submit=True):
-           lit.write('Contact us for an assessement and quote')
-           form_name=lit.text_input('Name')
-           form_email=lit.text_input('Email address')
-           contact_form=lit.form_submit_button('Submit')
+      lit.write('Contact us for an assessement and quote')
+      form_name=lit.text_input('Name')
+      form_email=lit.text_input('Email address')
+      contact_form=lit.form_submit_button('Submit')
    if contact_form:
       FROM ='onlyforshowhacks@gmail.com'
       email_password=os.environ.get('admin_gmail')
@@ -299,6 +294,7 @@ def who():
       em.attach(body)
           
       context = ssl.create_default_context()
+      
       try:
          with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
             smtp.login('onlyforshowhack@gmail.com',email_password)
