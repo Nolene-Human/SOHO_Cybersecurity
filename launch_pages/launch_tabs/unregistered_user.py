@@ -166,7 +166,6 @@ def tips():
         lit.subheader("How to:")
         lit.write("Use Password Management Tools")
         lit.markdown("Consider Passphrase or Random common words for your password")
-        lit.image("Art/Pictures/passphrase.png")
 
     elif select =="Update systems and software":
         lit.subheader("Some reason why you should")
@@ -187,7 +186,6 @@ def tips():
         lit.markdown("- Enable Your Other Security Measures To Do Their Job Properly")
         lit.markdown("- Stay compliant")
         lit.subheader("What it Does")
-        lit.image("Art/Pictures/mfa.png")
         lit.write("MFA provides more than one way to verify your login, hackers are unable to access your accounts without knowing all three keys at the time you log in")
         lit.subheader("Link to explain MFA")
         lit.markdown("[Multi Factor Authentication](https://www.youtube.com/watch?v=nc7fpGJsE1g)")
