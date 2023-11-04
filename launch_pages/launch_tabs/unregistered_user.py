@@ -278,6 +278,7 @@ def who():
       lit.write('Contact us for an assessement and quote')
       form_name=lit.text_input('Name')
       form_email=lit.text_input('Email address')
+      form_number=lit.text_input('Contact Number')
       contact_form=lit.form_submit_button('Submit')
    if contact_form:
       FROM ='onlyforshowhacks@gmail.com'
@@ -285,7 +286,7 @@ def who():
       TO = 'onlyforshowhacks@gmail.com'
           
       subject=f"message from new client {html.escape(form_name)}"
-      content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)}"
+      content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)},on {html.escape(form_email)}"
       em = MIMEMultipart()
       em['From']=FROM
       em['To']=TO
@@ -299,6 +300,8 @@ def who():
          with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
             smtp.login('onlyforshowhack@gmail.com',email_password)
             smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
+            lit.write("Thank you for contacting us, we will be in touch soon!"
+      
       except Exception as e:
          lit.write('unable to send email')
 
