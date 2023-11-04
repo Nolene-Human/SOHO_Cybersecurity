@@ -286,27 +286,26 @@ with lit.form('contact', clear_on_submit=True):
         form_name=lit.text_input('Name')
         form_email=lit.text_input('Email address')
         contact_form=lit.form_submit_button('Submit')
-
-    if contact_form:
-       FROM ='onlyforshowhacks@gmail.com'
-       email_password=os.environ.get('admin_gmail')
-       TO = 'onlyforshowhacks@gmail.com'
+   if contact_form:
+      FROM ='onlyforshowhacks@gmail.com'
+      email_password=os.environ.get('admin_gmail')
+      TO = 'onlyforshowhacks@gmail.com'
        
-       subject=f"message from new client {html.escape(form_name)}"
-       content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)}"
-       em = MIMEMultipart()
-       em['From']=FROM
-       em['To']=TO
-       em['Subject']=subject
-       body=MIMEText(content,'plain')
-       em.attach(body)
+      subject=f"message from new client {html.escape(form_name)}"
+      content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)}"
+      em = MIMEMultipart()
+      em['From']=FROM
+      em['To']=TO
+      em['Subject']=subject
+      body=MIMEText(content,'plain')
+      em.attach(body)
        
-       context = ssl.create_default_context()
-       try:
-          with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
-             smtp.login('onlyforshowhack@gmail.com',email_password)
-             smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
-       except Exception as e:
+      context = ssl.create_default_context()
+      try:
+         with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
+            smtp.login('onlyforshowhack@gmail.com',email_password)
+            smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
+      except Exception as e:
          lit.write(e)
 
    
