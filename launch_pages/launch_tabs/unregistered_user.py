@@ -306,6 +306,6 @@ if contact_form:
          smtp.login('onlyforshowhack@gmail.com',email_password)
          smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
    except Exception as e:
-      lit.write('unable to send email)
+      lit.write('unable to send email')
 
    
