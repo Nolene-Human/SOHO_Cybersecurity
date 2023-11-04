@@ -286,7 +286,7 @@ def who():
       TO = 'onlyforshowhacks@gmail.com'
           
       subject=f"message from new client {html.escape(form_name)}"
-      content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)},on {html.escape(form_email)}"
+      content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)},on {html.escape(form_number)}"
       em = MIMEMultipart()
       em['From']=FROM
       em['To']=TO
