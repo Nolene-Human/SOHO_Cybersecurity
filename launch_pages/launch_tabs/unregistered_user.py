@@ -273,11 +273,8 @@ def who():
 ## ______________________________________________________________________________________________________________________##
     import smtplib
     import os
-    from os.path import basename
-    from email.message import EmailMessage
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
-    from email.mime.application import MIMEApplication
     import ssl
     import html
 
@@ -311,6 +308,7 @@ with lit.form('contact', clear_on_submit=True):
                 smtp.login('onlyforshowhack@gmail.com',email_password)
                 smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
 
-                
         except Exception as e:
             lit.write(e)
+
+   
