@@ -286,9 +286,9 @@ def who():
       number = form_number.strip("<script>")
    
    if contact_form:
-      FROM = os.environ.get('admin_gmail')
+      FROM = os.environ.get('email')
       email_password=os.environ.get('admin_gmail')
-      TO = os.environ.get('admin_gmail')
+      TO = os.environ.get('email')
           
       subject=f"message from new client {html.escape(name)}"
       content =f"Please contact {html.escape(name)} on {html.escape(email)},on {html.escape(number)}"
