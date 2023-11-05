@@ -275,18 +275,23 @@ def what():
 def who():
    lit.header("Cybersecurity Specialist")
    with lit.form('contact', clear_on_submit=True):
-      lit.write('Contact us for an assessement and quote')
+      lit.write('Contact us for an assessment and quote')
       form_name=lit.text_input('Name')
       form_email=lit.text_input('Email address')
       form_number=lit.text_input('Contact Number')
       contact_form=lit.form_submit_button('Submit')
+      #Sanitse input
+      name = form_name.strip("<script>")
+      email = form_email.strip("<script>")
+      number = form_number.strip("<script>")
+   
    if contact_form:
-      FROM ='onlyforshowhacks@gmail.com'
+      FROM = os.environ.get('admin_gmail')
       email_password=os.environ.get('admin_gmail')
-      TO = 'onlyforshowhacks@gmail.com'
+      TO = os.environ.get('admin_gmail')
           
-      subject=f"message from new client {html.escape(form_name)}"
-      content =f"Please contact {html.escape(form_name)} on {html.escape(form_email)},on {html.escape(form_number)}"
+      subject=f"message from new client {html.escape(name)}"
+      content =f"Please contact {html.escape(name)} on {html.escape(email)},on {html.escape(number)}"
       em = MIMEMultipart()
       em['From']=FROM
       em['To']=TO
@@ -298,8 +303,8 @@ def who():
       
       try:
          with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
-            smtp.login('onlyforshowhack@gmail.com',email_password)
-            smtp.sendmail('onlyforshowhack@gmail.com',TO,em.as_string())
+            smtp.login(FROM,email_password)
+            smtp.sendmail(TO,TO,em.as_string())
             lit.write("Thank you for contacting us, we will be in touch soon!")
       
       except Exception as e:
