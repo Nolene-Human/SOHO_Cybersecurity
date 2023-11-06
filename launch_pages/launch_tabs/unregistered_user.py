@@ -300,19 +300,14 @@ def who():
                 number = ""
             else:
                 newnumber=newenumber+number
-
-      
-      name = form_name.strip("'';!-"<XSS>=&{()}")
-      email = form_email.strip("'';!-"<XSS>=&{()}")
-      number = form_number.strip("'';!-"<XSS>=&{()}")
    
    if contact_form:
       FROM = os.environ.get('email')
       email_password=os.environ.get('admin_gmail')
       TO = os.environ.get('email')
           
-      subject=f"message from new client {html.escape(name)}"
-      content =f"Please contact {html.escape(name)} on {html.escape(email)},on {html.escape(number)}"
+      subject=f"message from new client {html.escape(newname)}"
+      content =f"Please contact {html.escape(newname)} on {html.escape(newemail)},on {html.escape(newnumber)}"
       em = MIMEMultipart()
       em['From']=FROM
       em['To']=TO
