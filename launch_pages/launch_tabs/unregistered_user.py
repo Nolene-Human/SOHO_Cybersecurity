@@ -281,7 +281,27 @@ def who():
       form_number=lit.text_input('Contact Number')
       contact_form=lit.form_submit_button('Submit')
       
-      #Sanitse input
+      #Sanitse user input from blacklisted xss blacklisted/filtered characters
+      newname=""
+      newnumber=""
+      newemail=""
+        for name in form_name:
+            if name == ";" or name =="!" or name =="-"or name =="<"or name =="XSS"or name ==">"or name =="="or name == "&" or name == "("or name == ")"or name == "{"or name == "}":
+                name = ""
+            else:
+                newname=newname+name
+         for email in form_email:
+            if email == ";" or email =="!" or email =="-"or email =="<"or email =="XSS"or email ==">"or email =="="or email == "&" or email == "("or email == ")"or email == "{"or email == "}":
+                email = ""
+            else:
+                newemail=newemail+email
+         for number in form_number:
+            if number == ";" or number =="!" or number =="-"or number =="<"or number =="XSS"or number ==">"or number =="="or number == "&" or number == "("or number == ")"or number == "{"or number == "}":
+                number = ""
+            else:
+                newnumber=newenumber+number
+
+      
       name = form_name.strip("'';!-"<XSS>=&{()}")
       email = form_email.strip("'';!-"<XSS>=&{()}")
       number = form_number.strip("'';!-"<XSS>=&{()}")
