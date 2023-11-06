@@ -291,12 +291,12 @@ def who():
       else:
          newname=newname+name
    for email in form_email:
-      if email == ";" or email =="!" or email =="-"or email =="<"or email =="XSS"or email ==">"or email =="="or email == "&" or email == "("or email == ")"or email == "{"or email == "}"email == "SCRIPT" or email =="script":
+      if email == ";" or email =="!" or email =="-"or email =="<"or email =="XSS"or email ==">"or email =="="or email == "&" or email == "("or email == ")"or email == "{"or email == "}" or email == "SCRIPT" or email =="script":
          email = ""
       else:
          newemail=newemail+email
    for number in form_number:
-      if number == ";" or number =="!" or number =="-"or number =="<"or number =="XSS"or number ==">"or number =="="or number == "&" or number == "("or number == ")"or number == "{"or number == "}"number =="SCRIPT"or number =="script":
+      if number == ";" or number =="!" or number =="-"or number =="<"or number =="XSS"or number ==">"or number =="="or number == "&" or number == "("or number == ")"or number == "{"or number == "}" or number =="SCRIPT"or number =="script":
          number = ""
       else:
          newnumber=newenumber+number
