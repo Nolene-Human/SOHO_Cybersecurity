@@ -286,17 +286,17 @@ def who():
       newnumber=""
       newemail=""
         for name in form_name:
-            if name == ";" or name =="!" or name =="-"or name =="<"or name =="XSS"or name ==">"or name =="="or name == "&" or name == "("or name == ")"or name == "{"or name == "}":
+            if name == ";" or name =="!" or name =="-"or name =="<"or name =="XSS"or name ==">"or name =="="or name == "&" or name == "("or name == ")"or name == "{"or name == "}" or name == "SCRIPT"or name == "script":
                 name = ""
             else:
                 newname=newname+name
          for email in form_email:
-            if email == ";" or email =="!" or email =="-"or email =="<"or email =="XSS"or email ==">"or email =="="or email == "&" or email == "("or email == ")"or email == "{"or email == "}":
+            if email == ";" or email =="!" or email =="-"or email =="<"or email =="XSS"or email ==">"or email =="="or email == "&" or email == "("or email == ")"or email == "{"or email == "}"email == "SCRIPT" or email =="script":
                 email = ""
             else:
                 newemail=newemail+email
          for number in form_number:
-            if number == ";" or number =="!" or number =="-"or number =="<"or number =="XSS"or number ==">"or number =="="or number == "&" or number == "("or number == ")"or number == "{"or number == "}":
+            if number == ";" or number =="!" or number =="-"or number =="<"or number =="XSS"or number ==">"or number =="="or number == "&" or number == "("or number == ")"or number == "{"or number == "}"number =="SCRIPT"or number =="script":
                 number = ""
             else:
                 newnumber=newenumber+number
