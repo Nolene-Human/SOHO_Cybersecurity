@@ -280,10 +280,11 @@ def who():
       form_email=lit.text_input('Email address')
       form_number=lit.text_input('Contact Number')
       contact_form=lit.form_submit_button('Submit')
+      
       #Sanitse input
-      name = form_name.strip("<script>")
-      email = form_email.strip("<script>")
-      number = form_number.strip("<script>")
+      name = form_name.strip("'';!-"<XSS>=&{()}")
+      email = form_email.strip("'';!-"<XSS>=&{()}")
+      number = form_number.strip("'';!-"<XSS>=&{()}")
    
    if contact_form:
       FROM = os.environ.get('email')
