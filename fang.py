@@ -7,6 +7,10 @@
 ## Importing Front-end tool Streamlit (https://streamlit.io/)
 import streamlit as lit
 
+import requests
+headers ={'content-type':'multipart/form-data'}
+r=requests.post('https://httpbin.org/post',headers=headers)
+
 ## ______________________________________________________________________________________________________________________##
 
 ## Import applications Login and Registration Functions ##
