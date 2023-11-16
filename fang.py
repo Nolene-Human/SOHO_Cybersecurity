@@ -7,9 +7,6 @@
 ## Importing Front-end tool Streamlit (https://streamlit.io/)
 import streamlit as lit
 
-import requests
-headers ={'X-Frame-Option:DENY'}
-r=requests.post('https://httpbin.org/post',headers=headers)
 
 ## ______________________________________________________________________________________________________________________##
 
