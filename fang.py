@@ -8,7 +8,7 @@
 import streamlit as lit
 
 import requests
-headers ={'content-type':'multipart/form-data'}
+headers ={'X-Frame-Option:DENY'}
 r=requests.post('https://httpbin.org/post',headers=headers)
 
 ## ______________________________________________________________________________________________________________________##
