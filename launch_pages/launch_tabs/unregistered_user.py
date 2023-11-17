@@ -299,7 +299,7 @@ def who():
       if number == ";" or number =="!" or number =="-"or number =="<"or number =="XSS"or number ==">"or number =="="or number == "&" or number == "("or number == ")"or number == "{"or number == "}" or number =="SCRIPT"or number =="script":
          number = ""
       else:
-         newnumber=newenumber+number
+         newnumber=newnumber+number
    
    if contact_form:
       FROM = os.environ.get('email')
