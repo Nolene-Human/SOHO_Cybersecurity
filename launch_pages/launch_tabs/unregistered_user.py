@@ -325,5 +325,6 @@ def who():
       
       except Exception as e:
          lit.write('unable to send email')
+         console.log(e)
 
    
