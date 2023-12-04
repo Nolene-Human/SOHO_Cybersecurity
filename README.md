@@ -17,7 +17,8 @@ Affected versions of this package are vulnerable to Heap-based Buffer Overflow w
 
 # Features
 Cybersecurity Training
-Contact form
+
+** NEW ** Contact form
 
 # Important to Note
 
