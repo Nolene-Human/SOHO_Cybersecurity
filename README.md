@@ -1,6 +1,7 @@
 
 <h1> Small Office Home Office Cybersecurity Training Application </h1>
-see application: https://fang2.onrender.com/
+<h3 align="center"> see application: https://fang2.onrender.com </h3>
+
 ## by Nolene Human 
 date: 31/01/2023
 This application is built on a Bachelor of Software Engineering Cybersecurity assignment. This is application 1 of 2.
