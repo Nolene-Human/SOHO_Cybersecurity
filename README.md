@@ -1,6 +1,6 @@
 
-<h1 style="color:rgb(167, 22, 102)"> Small Office Home Office Cybersecurity Training Application </h1>
-## Family Area Network Gang
+<h1> Small Office Home Office Cybersecurity Training Application </h1>
+
 ## by Nolene Human 
 date: 31/01/2023
 This application is built on a Bachelor of Software Engineering Cybersecurity assignment. This is application 1 of 2.
